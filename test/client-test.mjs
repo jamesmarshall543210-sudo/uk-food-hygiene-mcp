@@ -1,0 +1,16 @@
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
+const url = new URL(process.env.MCP_URL || "http://localhost:8080/mcp");
+const c = new Client({ name: "test", version: "1" });
+await c.connect(new StreamableHTTPClientTransport(url));
+const t = await c.listTools();
+console.log("tools:", t.tools.map((x) => x.name).join(", "));
+const s = JSON.parse((await c.callTool({ name: "search_establishments", arguments: { postcode: "LS1 4AP", maxResults: 50 } })).content[0].text);
+console.log("search LS1 4AP: totalMatches", s.totalMatches, "returned", s.returned, "first:", JSON.stringify(s.results[0]));
+const g = JSON.parse((await c.callTool({ name: "get_establishment", arguments: { fhrsId: s.results[0].fhrsId } })).content[0].text);
+console.log("get_establishment:", g.result.name, g.result.rating, g.result.ratingDate, g.result.scheme);
+const r = JSON.parse((await c.callTool({ name: "recent_rating_changes", arguments: { localAuthority: "Caerphilly", days: 30, maxResults: 5 } })).content[0].text);
+console.log("recent Caerphilly 30d: since", r.since, "areaMatches", r.areaMatches, "scanned", r.scanned, "complete", r.complete, "returned", r.returned, r.results[0] ? JSON.stringify(r.results[0]) : "");
+const bad = await c.callTool({ name: "search_establishments", arguments: {} });
+console.log("empty args isError:", bad.isError);
+await c.close();

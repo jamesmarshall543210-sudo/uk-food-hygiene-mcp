@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.GITHUB_USERNAME_PLACEHOLDER/uk-food-hygiene-mcp",
+  "title": "UK Food Hygiene Ratings",
+  "description": "Search official UK Food Standards Agency hygiene ratings by name, postcode or council.",
+  "websiteUrl": "https://mcpize.com/mcp/uk-food-hygiene-ratings",
+  "repository": {
+    "url": "https://github.com/GITHUB_USERNAME_PLACEHOLDER/uk-food-hygiene-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://uk-food-hygiene-ratings.mcpize.run/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "MCPize API key as 'Bearer YOUR_KEY'. Get a key at https://mcpize.com/mcp/uk-food-hygiene-ratings ($0.02 per call or $9/month).",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

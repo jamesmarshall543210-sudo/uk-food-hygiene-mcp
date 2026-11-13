@@ -1,0 +1,13 @@
+version: 1
+name: uk-food-hygiene-ratings
+description: Search UK Food Standards Agency food hygiene ratings (FHRS/FHIS) by name, postcode, local authority or business type.
+runtime: typescript
+entry: src/index.ts
+build:
+  install: npm ci
+  command: npm run build
+startCommand:
+  type: http
+  command: node dist/index.js
+configSchema:
+  source: code
