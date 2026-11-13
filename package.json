@@ -7,10 +7,10 @@
   "homepage": "https://mcpize.com/mcp/uk-food-hygiene-ratings",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GITHUB_USERNAME_PLACEHOLDER/uk-food-hygiene-mcp.git"
+    "url": "https://github.com/jamesmarshall543210-sudo/uk-food-hygiene-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/GITHUB_USERNAME_PLACEHOLDER/uk-food-hygiene-mcp/issues"
+    "url": "https://github.com/jamesmarshall543210-sudo/uk-food-hygiene-mcp/issues"
   },
   "type": "module",
   "main": "dist/index.js",

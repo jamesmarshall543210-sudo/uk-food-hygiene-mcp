@@ -1,11 +1,11 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.GITHUB_USERNAME_PLACEHOLDER/uk-food-hygiene-mcp",
+  "name": "io.github.jamesmarshall543210-sudo/uk-food-hygiene-mcp",
   "title": "UK Food Hygiene Ratings",
   "description": "Search official UK Food Standards Agency hygiene ratings by name, postcode or council.",
   "websiteUrl": "https://mcpize.com/mcp/uk-food-hygiene-ratings",
   "repository": {
-    "url": "https://github.com/GITHUB_USERNAME_PLACEHOLDER/uk-food-hygiene-mcp",
+    "url": "https://github.com/jamesmarshall543210-sudo/uk-food-hygiene-mcp",
     "source": "github"
   },
   "version": "0.1.0",
